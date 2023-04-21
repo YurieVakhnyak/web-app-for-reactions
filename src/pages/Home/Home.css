@@ -1,0 +1,43 @@
+:root {
+  --flight-distance: -600px;
+  --flight-time: 5s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  position: relative;
+}
+
+.emoji-button {
+  font-size: 3rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.animate {
+  animation: move var(--flight-time) linear;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0%);
+  }
+  30% {
+    transform: translate(50px, calc(var(--flight-distance) / 3));
+  }
+  60% {
+    transform: translate(-30px, calc(var(--flight-distance) / 2));
+  }
+
+  100% {
+    transform: translateY(var(--flight-distance));
+  }
+}
