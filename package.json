@@ -1,7 +1,8 @@
 {
   "name": "web-app-for-reactions",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://YurieVakhnyak.github.io/web-app-for-reactions",
   "dependencies": {
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
