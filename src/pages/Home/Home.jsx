@@ -73,6 +73,10 @@ export function Home() {
           <span>Browser doesn't support speech recognition.</span>
         ) : (
           <div>
+            <p>
+              Try to say keywords: 'smile', 'like', 'sad', 'strong' after
+              clicking the 'start' button
+            </p>
             <p>Microphone: {listening ? "on" : "off"}</p>
             <button onClick={SpeechRecognition.startListening}>Start</button>
             <button onClick={SpeechRecognition.stopListening}>Stop</button>

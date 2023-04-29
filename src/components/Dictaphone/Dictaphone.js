@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+import css from "./Dictaphone.module.css";
 
 export const Dictaphone = () => {
   const [output, setOutput] = useState("");
@@ -44,7 +45,7 @@ export const Dictaphone = () => {
 
       <button onClick={resetTranscript}>Reset transcript</button>
       <p>{transcript}</p>
-      <p>{output}</p>
+      <p className={css.output}>{output}</p>
     </div>
   );
 };
