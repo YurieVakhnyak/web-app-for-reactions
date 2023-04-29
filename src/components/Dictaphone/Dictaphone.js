@@ -33,11 +33,16 @@ export const Dictaphone = () => {
   return (
     <div>
       <p>Microphone: {listening ? "on" : "off"}</p>
-      <button onClick={SpeechRecognition.startListening}>Start</button>
-      <button onClick={startListening}>Start continuous listening</button>
-      <button onClick={SpeechRecognition.stopListening}>Stop</button>
-      <button onClick={SpeechRecognition.abortListening}>Abort</button>
-      <button onClick={resetTranscript}>Reset</button>
+      <div>
+        <button onClick={SpeechRecognition.startListening}>Start</button>
+        <button onClick={SpeechRecognition.stopListening}>Stop</button>
+      </div>
+      <div>
+        <button onClick={startListening}>Start continuous listening</button>
+        <button onClick={SpeechRecognition.abortListening}>Abort</button>
+      </div>
+
+      <button onClick={resetTranscript}>Reset transcript</button>
       <p>{transcript}</p>
       <p>{output}</p>
     </div>

@@ -7,16 +7,16 @@ export const SharedLayout = () => {
       <header>
         <nav>
           <Link to="/" activeclassname="active">
-            ..Home..
+            ..Click and Voice Emoji..
           </Link>
           <Link to="/start" activeclassname="active">
-            ..Start..
+            ..Voice Animation..
           </Link>
           <Link to="/web" activeclassname="active">
             ..Dictaphone..
           </Link>
           <Link to="/animation" activeclassname="active">
-            ..Animation..
+            ..Click Animation..
           </Link>
         </nav>
       </header>

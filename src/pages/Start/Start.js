@@ -40,6 +40,11 @@ export const Start = () => {
 
   return (
     <div className={css.container}>
+      <p>
+        "If you say 'cat' or 'cow' while working microphone (red dot on the tab
+        appears after refreshing the page), the cat or cow animation will
+        appear."
+      </p>
       <div className={css.animation}>
         {shouldPlay === "cow" && <Lottie animationData={cowAnimation} />}
       </div>
