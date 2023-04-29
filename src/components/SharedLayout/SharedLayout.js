@@ -12,6 +12,9 @@ export const SharedLayout = () => {
           <Link to="/start" activeclassname="active">
             ..Start..
           </Link>
+          <Link to="/web" activeclassname="active">
+            ..Dictaphone..
+          </Link>
         </nav>
       </header>
       <Suspense fallback={<div>Loading subpage...</div>}>

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Start } from "./pages/Start/Start";
 import { SharedLayout } from "./components/SharedLayout/SharedLayout";
 import { Home } from "./pages/Home/Home";
+import { Web } from "./pages/Web/Web";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="start" element={<Start />} />
+          <Route path="web" element={<Web />} />
         </Route>
       </Routes>
     </div>
