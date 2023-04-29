@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: chocolate;
+}
+
+.animation {
+  position: absolute;
+  top: 50%; /* змініть позицію на потрібну */
+  left: 50%; /* змініть позицію на потрібну */
+  transform: translate(-50%, -50%);
+}

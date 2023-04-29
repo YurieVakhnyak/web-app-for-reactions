@@ -7,12 +7,15 @@ import SpeechRecognition, {
 
 export function Home() {
   const [emojis, setEmojis] = useState([]);
+  const options = {
+    lang: "ru-RU",
+  };
   const {
     transcript,
     listening,
     resetTranscript,
     browserSupportsSpeechRecognition,
-  } = useSpeechRecognition();
+  } = useSpeechRecognition(options);
 
   const emojisList = ["😃", "🤪", "😍", "😢", "😎", "😠", "👍", "💪"];
   function createEmoji(emoji) {
@@ -75,7 +78,6 @@ export function Home() {
             <button onClick={SpeechRecognition.stopListening}>Stop</button>
             <button onClick={resetTranscript}>Reset</button>
             <p>{transcript}</p>
-            {/* <div>{includeWord(transcript)}</div> */}
           </div>
         )}
 
