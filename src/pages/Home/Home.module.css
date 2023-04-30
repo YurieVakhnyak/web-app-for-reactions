@@ -1,0 +1,42 @@
+:root {
+  --flight-distance: -600px;
+  --flight-time: 5s;
+}
+
+.homeContainer {
+  background-color: burlywood;
+}
+
+.emojiButton {
+  background-color: peru;
+  border-color: peru;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}
+
+.emojiButton:active {
+  background-color: chocolate;
+}
+
+.animate {
+  animation: move var(--flight-time) linear;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0%);
+  }
+  30% {
+    transform: translate(50px, calc(var(--flight-distance) / 3));
+  }
+  60% {
+    transform: translate(-30px, calc(var(--flight-distance) / 2));
+  }
+
+  100% {
+    transform: translateY(var(--flight-distance));
+  }
+}
