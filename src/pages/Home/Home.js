@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
+import { includeWord, createEmoji } from "../../functions/functions";
+import styles from "./Home.module.css";
 
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -18,56 +19,19 @@ export function Home() {
   } = useSpeechRecognition(options);
 
   const emojisList = ["😃", "🤪", "😍", "😢", "😎", "😠", "👍", "💪"];
-  function createEmoji(emoji) {
-    const newEmoji = {
-      id: Date.now(),
-      top: 0,
-      left: Math.floor(Math.random() * window.innerWidth),
-      emoji: emoji,
-    };
-    setEmojis((prevState) => [...prevState, newEmoji]);
-    setTimeout(() => {
-      setEmojis((prevState) =>
-        prevState.filter((emoji) => emoji.id !== newEmoji.id)
-      );
-    }, 5000);
-  }
-
-  function includeWord(str) {
-    let emoji = "😃";
-    if (str.includes("smile")) {
-      createEmoji(emoji);
-    }
-    if (str.includes("sad")) {
-      emoji = "😢";
-      createEmoji(emoji);
-    }
-    if (str.includes("angry")) {
-      emoji = "😠";
-      createEmoji(emoji);
-    }
-    if (str.includes("like")) {
-      emoji = "👍";
-      createEmoji(emoji);
-    }
-    if (str.includes("strong")) {
-      emoji = "💪";
-      createEmoji(emoji);
-    }
-    return null;
-  }
 
   function handleClick(emoji) {
     console.log(emoji);
-    createEmoji(emoji);
+    createEmoji(emoji, setEmojis);
   }
 
   useEffect(() => {
-    includeWord(transcript);
+    // eslint-disable-next-line
+    includeWord(transcript, setEmojis);
   }, [transcript]);
 
   return (
-    <div className="App">
+    <div className={styles.homeContainer}>
       <header className="App-header">
         {!browserSupportsSpeechRecognition ? (
           <span>Browser doesn't support speech recognition.</span>
@@ -85,11 +49,11 @@ export function Home() {
           </div>
         )}
 
-        <div className="emoji-buttons">
+        <div>
           {emojisList.map((emoji) => (
             <button
               key={emoji}
-              className="emoji-button"
+              className={styles.emojiButton}
               onClick={() => handleClick(emoji)}
             >
               {emoji}
@@ -105,7 +69,7 @@ export function Home() {
               top: window.innerHeight,
               left: emoji.left,
             }}
-            className="animate"
+            className={styles.animate}
           >
             {emoji.emoji}
           </div>

@@ -4,11 +4,11 @@ import { SharedLayout } from "./components/SharedLayout/SharedLayout";
 import { Home } from "./pages/Home/Home";
 import { Web } from "./pages/Web/Web";
 import { Animation } from "./pages/Animation/Animation";
-import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.container}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -22,3 +22,5 @@ function App() {
 }
 
 export default App;
+
+// @emoji-mart/data @emoji-mart/react @speechly/speech-recognition-polyfill @testing-library/jest-dom @testing-library/react @testing-library/user-event annyang emoji-mart   web-speech-cognitive-services

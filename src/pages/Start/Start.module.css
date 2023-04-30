@@ -1,13 +1,15 @@
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: chocolate;
 }
 
 .animation {
-  position: absolute;
-  top: 50%; /* змініть позицію на потрібну */
-  left: 50%; /* змініть позицію на потрібну */
-  transform: translate(-50%, -50%);
+  /* position: absolute;
+  top: -10%; 
+  left: 25%; 
+  transform: scale(0.3) translate(-50%, -50%); */
+  transform: scale(0.3) translate(0%, -100%);
 }

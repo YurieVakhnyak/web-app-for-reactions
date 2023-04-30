@@ -3,23 +3,22 @@
   --flight-time: 5s;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  position: relative;
+.homeContainer {
+  background-color: burlywood;
 }
 
-.emoji-button {
-  font-size: 3rem;
+.emojiButton {
+  background-color: peru;
+  border-color: peru;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 2rem;
   padding: 0.5rem 1rem;
   margin: 1rem;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-  transition: transform 0.3s;
+}
+
+.emojiButton:active {
+  background-color: chocolate;
 }
 
 .animate {

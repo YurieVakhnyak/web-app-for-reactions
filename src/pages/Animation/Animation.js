@@ -37,7 +37,7 @@ export const Animation = () => {
   return (
     <div className={styles.animationContainer} onClick={handleAnimationClick}>
       <div className={styles.animation} ref={animationContainer} />
-      <p>Click Me</p>
+      <p>Click the Cat</p>
       <audio ref={audioElement} src={meowSound} />
     </div>
   );

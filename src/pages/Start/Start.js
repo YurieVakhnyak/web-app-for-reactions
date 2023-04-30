@@ -6,7 +6,7 @@ const catAnimation = require("../../images/87174-bad-cat.json");
 const cowAnimation = require("../../images/78729-cow-animation.json");
 
 export const Start = () => {
-  const [shouldPlay, setShouldPlay] = useState(null);
+  const [shouldPlay, setShouldPlay] = useState("");
 
   useEffect(() => {
     window.SpeechRecognition =
@@ -21,13 +21,13 @@ export const Start = () => {
         setShouldPlay(true);
         setTimeout(() => {
           setShouldPlay("cat");
-        }, 2000);
+        }, 1000);
       }
       if (result.includes("cow")) {
         setShouldPlay(true);
         setTimeout(() => {
           setShouldPlay("cow");
-        }, 2000);
+        }, 1000);
       }
     };
 
@@ -45,6 +45,9 @@ export const Start = () => {
         appears after refreshing the page), the cat or cow animation will
         appear."
       </p>
+      <div>
+        <p>Text: {shouldPlay}</p>
+      </div>
       <div className={css.animation}>
         {shouldPlay === "cow" && <Lottie animationData={cowAnimation} />}
       </div>

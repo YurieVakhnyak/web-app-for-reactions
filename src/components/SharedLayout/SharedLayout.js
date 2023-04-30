@@ -1,23 +1,18 @@
 import { Suspense } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
+import styles from "../SharedLayout/SharedLayout.module.css";
 
 export const SharedLayout = () => {
   return (
     <div>
-      <header>
-        <nav>
-          <Link to="/" activeclassname="active">
-            ..Click and Voice Emoji..
-          </Link>
-          <Link to="/start" activeclassname="active">
-            ..Voice Animation..
-          </Link>
-          <Link to="/web" activeclassname="active">
-            ..Dictaphone..
-          </Link>
-          <Link to="/animation" activeclassname="active">
-            ..Click Animation..
-          </Link>
+      <header className={styles.navContainer}>
+        <nav className={styles.navigation}>
+          <NavLink className={styles.navigaion} to="/">
+            Click and Voice Emoji
+          </NavLink>
+          <NavLink to="/start">Voice Animation</NavLink>
+          <NavLink to="/web">Dictaphone</NavLink>
+          <NavLink to="/animation">Click Animation</NavLink>
         </nav>
       </header>
       <Suspense fallback={<div>Loading subpage...</div>}>
